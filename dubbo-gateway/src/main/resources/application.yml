@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+
+        ## http://localhost:88/api/product/category/list/tree   http://localhost:10000/product/category/list/tree
+        - id: provider
+          uri: lb://dubbo-provider
+          predicates:
+            - Path=/provider/**
+          filters:
+            - RewritePath=/provider/(?<segment>.*),/$\{segment}
+
+
+        - id: consumer
+          uri: lb://dubbo-consumer
+          predicates:
+            - Path=/consumer/**
+          filters:
+            - RewritePath=/consumer/(?<segment>.*),/$\{segment}
+
+dubbo:
+  application:
+    name: dubbo-gateway
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://${zookeeper.address:127.0.0.1}:2181
+
+server:
+  port: 8888
