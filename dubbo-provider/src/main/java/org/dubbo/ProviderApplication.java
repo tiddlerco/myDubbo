@@ -1,4 +1,4 @@
-package org.provider;
+package org.dubbo;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;

@@ -1,4 +1,4 @@
-package org.controller;
+package org.dubbo.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

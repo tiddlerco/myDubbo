@@ -1,4 +1,4 @@
-package org.provider.impl;
+package org.dubbo.provider.impl;
 
 import interceface.DemoService;
 import org.apache.dubbo.config.annotation.DubboService;

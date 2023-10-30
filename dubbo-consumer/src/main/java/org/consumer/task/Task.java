@@ -21,7 +21,7 @@ public class Task implements CommandLineRunner {
     public void run(String... args) throws Exception {
         String result = demoService.sayHello("world");
         System.out.println("Receive result ======> " + result);
-
+        //每秒调用一次consumer
         new Thread(()-> {
             while (true) {
                 try {

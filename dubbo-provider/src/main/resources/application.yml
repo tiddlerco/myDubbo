@@ -1,8 +1,12 @@
 dubbo:
   application:
-    name: dubbo-provider
+    name: myProvider
   protocol:
     name: dubbo
     port: -1
   registry:
     address: zookeeper://${zookeeper.address:127.0.0.1}:2181
+
+
+server:
+  port: 6666
